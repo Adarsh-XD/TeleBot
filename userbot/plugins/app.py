@@ -15,12 +15,12 @@ import bs4
 
 
 from telethon import *
-
+from userbot.utils import admin_cmd
 from userbot.events import register
 
 
 
-@register(pattern="^.app (.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="app (.*)")
 
 async def apk(e):
 
@@ -76,7 +76,7 @@ async def apk(e):
 
 
 
-@register(pattern="^.appr (.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="appr (.*)")
 
 async def apkr(e):
 

@@ -10,7 +10,7 @@ from requests import get
 from bs4 import BeautifulSoup
 
 from userbot import CMD_HELP
-from userbot.utils import register
+from userbot.utils import register, admin_cmd
 
 GITHUB = 'https://github.com'
 DEVICES_DATA = 'https://raw.githubusercontent.com/androidtrackers/' \
@@ -38,7 +38,7 @@ async def magisk(request):
                     f'[Uninstaller]({data["uninstaller"]["link"]})\n'
     await request.edit(releases)
 
-@register(outgoing=True, pattern=r"^.device(?: |$)(\S*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="device(?: |$)(\S*)")
 async def device_info(request):
     """ get android device basic info from its codename """
     textx = await request.get_reply_message()
@@ -69,7 +69,7 @@ async def device_info(request):
     await request.edit(reply)
 
 
-@register(outgoing=True, pattern=r"^.codename(?: |)([\S]*)(?: |)([\s\S]*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="codename(?: |)([\S]*)(?: |)([\s\S]*)")
 async def codename_info(request):
     """ search for android codename """
     textx = await request.get_reply_message()
@@ -104,7 +104,7 @@ async def codename_info(request):
     await request.edit(reply)
 
 
-@register(outgoing=True, pattern=r"^.specs(?: |)([\S]*)(?: |)([\s\S]*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="specs(?: |)([\S]*)(?: |)([\s\S]*)")
 async def devices_specifications(request):
     """ Mobile devices specifications """
     textx = await request.get_reply_message()
@@ -157,7 +157,7 @@ async def devices_specifications(request):
     await request.edit(reply)
 
 
-@register(outgoing=True, pattern=r"^.twrp(?: |$)(\S*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="twrp(?: |$)(\S*)")
 async def twrp(request):
     """ get android device twrp """
     textx = await request.get_reply_message()

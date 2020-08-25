@@ -52,7 +52,7 @@ async def animepp():
 
     urllib.request.urlretrieve(fy,"donottouch.jpg")
 
-@borg.on(admin_cmd(pattern="animedp ?(.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="animedp ?(.*)"))
 
 async def main(event):
 

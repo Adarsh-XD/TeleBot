@@ -68,7 +68,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@register(outgoing=True, pattern="^.setgpic$")
+@telebot.on(admin_cmd(outgoing=True, pattern="setgpic")
 @errors_handler
 async def set_group_photo(gpic):
     """ For .setgpic command, changes the picture of a group """
@@ -106,7 +106,7 @@ async def set_group_photo(gpic):
             await gpic.edit(PP_ERROR)
 
 
-@register(outgoing=True, pattern="^.promote(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="promote(?: |$)(.*)")
 @errors_handler
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
@@ -157,7 +157,7 @@ async def promote(promt):
             f"CHAT: {promt.chat.title}(`{promt.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^.demote(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="demote(?: |$)(.*)")
 @errors_handler
 async def demote(dmod):
     """ For .demote command, demotes the replied/tagged person """
@@ -207,7 +207,7 @@ async def demote(dmod):
             f"CHAT: {dmod.chat.title}(`{dmod.chat_id}`)")
 
 
-@borg.on(admin_cmd(pattern="(ban|unban) ?(.*)", allow_sudo=True))
+@telebot.on(admin_cmd(outgoing=True, pattern="(ban|unban) ?(.*)", allow_sudo=True))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".unban"
@@ -238,7 +238,7 @@ async def _(event):
         await event.edit(f"{input_cmd}ned Successfully!")
 
 
-@borg.on(admin_cmd(pattern="pgs ?(.*)", allow_sudo=True))
+@telebot.on(admin_cmd(outgoing=True, pattern="pgs ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -268,7 +268,7 @@ async def _(event):
             await event.edit("**PURGE** Failed!")
 
 
-@borg.on(admin_cmd(pattern="(ban|unban) ?(.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="(ban|unban) ?(.*)"))
 async def _(event):
     # Space weirdness in regex required because argument is optional and other
     # commands start with ".unban"
@@ -331,7 +331,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@borg.on(admin_cmd(pattern="affk(?: |$)(.*)", allow_sudo=True))
+@telebot.on(admin_cmd(outgoing=True, pattern="affk(?: |$)(.*)", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     """ For .promote command, promotes the replied/tagged person """
@@ -378,7 +378,7 @@ async def promote(promt):
             f"CHAT: {promt.chat.title}(`{promt.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^.gmute(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="gmute(?: |$)(.*)")
 @errors_handler
 async def gspider(gspdr):
     """ For .gmute command, globally mutes the replied/tagged person """
@@ -423,7 +423,7 @@ async def gspider(gspdr):
                 f"CHAT: {gspdr.chat.title}(`{gspdr.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^.delusers(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="delusers(?: |$)(.*)")
 @errors_handler
 async def rm_deletedacc(show):
     """ For .delusers command, list all the ghost/deleted accounts in a chat. """
@@ -495,7 +495,7 @@ async def rm_deletedacc(show):
             \nCHAT: {show.chat.title}(`{show.chat_id}`)")
 
 
-@register(outgoing=True, pattern="^.admins$")
+@telebot.on(admin_cmd(outgoing=True, pattern="admins")
 @errors_handler
 async def get_admin(show):
     """ For .admins command, list all of the admins of the chat. """
@@ -516,7 +516,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@register(outgoing=True, pattern="^.pin(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="pin(?: |$)(.*)")
 @errors_handler
 async def pin(msg):
     """ For .pin command, pins the replied/tagged message on the top the chat. """
@@ -562,7 +562,7 @@ async def pin(msg):
             f"LOUD: {not is_silent}")
 
 
-@register(outgoing=True, pattern="^.kick(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="kick(?: |$)(.*)")
 @errors_handler
 async def kick(usr):
     """ For .kick command, kicks the replied/tagged person from the group. """
@@ -605,7 +605,7 @@ async def kick(usr):
             f"CHAT: {usr.chat.title}(`{usr.chat_id}`)\n")
 
 
-@register(outgoing=True, pattern="^.users ?(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="users ?(.*)")
 @errors_handler
 async def get_users(show):
     """ For .users command, list all of the users in a chat. """

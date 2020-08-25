@@ -3,7 +3,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("scan ?(.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="scan ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return 
