@@ -1,5 +1,6 @@
 # For @TeleBotHelp
 """Check if your userbot is working."""
+
 import os
 import requests
 import time
@@ -41,7 +42,7 @@ def get_readable_time(seconds: int) -> str:
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet, check pinned in @TeleBotHelp"
 
-@command(outgoing=True, pattern="^.alive$")
+@telebot.on(admin_cmd(outgoing=True, pattern="alive$"))
 async def amireallyalive(alive):
     start = datetime.now()
     """ For .alive command, check if the bot is running.  """
