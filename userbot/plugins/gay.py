@@ -3,7 +3,7 @@
 import time
 import os,sys
 """Available Commands:
-.wtf"""
+.gay"""
 
 from telethon import events
 
@@ -11,7 +11,7 @@ import asyncio
 
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("(.*)"))
+@borg.on(admin_cmd(pattern="(.*)"))
 
 async def _(event):
     if event.fwd_from:
