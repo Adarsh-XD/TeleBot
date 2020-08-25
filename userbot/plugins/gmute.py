@@ -1,7 +1,9 @@
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 import asyncio
 
-@command(outgoing=True, pattern=r"^.gmute ?(\d+)?")
+from userbot.utils import admin_cmd
+
+@telebot.on(admin_cmd(outgoing=True, pattern="gmute ?(\d+)?"))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -30,7 +32,7 @@ async def startgmute(event):
     else:
         await event.edit("Silence now. **Successfully gmuted that person**")
 
-@command(outgoing=True, pattern=r"^.ungmute ?(\d+)?")
+@telebot.on(admin_cmd(outgoing=True, pattern="^.ungmute ?(\d+)?"))
 async def endgmute(event):
     private = False
     if event.fwd_from:
@@ -58,7 +60,7 @@ async def endgmute(event):
     else:
         await event.edit("Successfully ungmuted that person")
 
-@command(outgoing=True, pattern=r"^.gmute ?(\d+)?", allow_sudo=True)
+@telebot.on(admin_cmd(outgoing=True, pattern="gmute ?(\d+)?", allow_sudo=True))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -87,7 +89,7 @@ async def startgmute(event):
     else:
         await event.edit("Successfully gmuted that person")
 
-@command(outgoing=True, pattern=r"^.ungmute ?(\d+)?", allow_sudo=True)
+@telebot.on(admin_cmd(outgoing=True, pattern="ungmute ?(\d+)?", allow_sudo=True))
 async def endgmute(event):
     private = False
     if event.fwd_from:
@@ -115,7 +117,7 @@ async def endgmute(event):
     else:
         await event.edit("You are free now. **Successfully ungmuted that person**")
 
-@command(incoming=True)
+@telebot.on(incoming=True)
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()

@@ -17,7 +17,7 @@ Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
 
 
-@register(outgoing=True, pattern=r"^\.(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="(set|get|del) var(?: |$)(.*)(?: |$)([\s\S]*)"))
 async def variable(var):
     """
         Manage most of ConfigVars setting, set new var, get current var,
@@ -94,7 +94,7 @@ async def variable(var):
             return await var.edit(f"**{variable}**  `is not exists`")
 
 
-@register(outgoing=True, pattern=r"^\.usage(?: |$)")
+@telebot.on(admin_cmd(outgoing=True, pattern="usage(?: |$)"))
 async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
@@ -152,7 +152,7 @@ async def dyno_usage(dyno):
                            )
 
 
-@command(pattern="^.info heroku")
+@telebot.on(admin_cmd(pattern=(pattern="info heroku"))
 async def info(event):
     await borg.send_message(event.chat_id, "**Info for Module to Manage Heroku:**\n\n`.usage`\nUsage:__Check your heroku dyno hours status.__\n\n`.set var <NEW VAR> <VALUE>`\nUsage: __add new variable or update existing value variable__\n**!!! WARNING !!!, after setting a variable the bot will restart.**\n\n`.get var or .get var <VAR>`\nUsage: __get your existing varibles, use it only on your private group!__\n**This returns all of your private information, please be cautious...**\n\n`.del var <VAR>`\nUsage: __delete existing variable__\n**!!! WARNING !!!, after deleting variable the bot will restarted**")
     await event.delete()
@@ -165,7 +165,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     items, _ = getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength - indent, indent=indent)
     return indentitems(items, indent, level=0)
 
-@register(outgoing=True, pattern=r"^\.logs")
+@telebot.on(admin_cmd(outgoing=True, pattern="logs"))
 async def _(dyno):        
         try:
              Heroku = heroku3.from_key(Var.HEROKU_API_KEY)                         

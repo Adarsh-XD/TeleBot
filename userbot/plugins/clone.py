@@ -11,7 +11,7 @@ from userbot.utils import admin_cmd
 from telethon.tl import functions
 
 
-@borg.on(admin_cmd(pattern="clone ?(.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="clone ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return

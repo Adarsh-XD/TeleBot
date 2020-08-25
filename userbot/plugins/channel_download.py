@@ -8,7 +8,7 @@ import os
 import subprocess
 from uniborg.util import admin_cmd
 
-@borg.on(admin_cmd(pattern=r"getc"))
+@telebot.on(admin_cmd(outgoing=True, pattern="getc"))
 async def get_media(event):
     if event.fwd_from:
         return
@@ -38,13 +38,8 @@ async def get_media(event):
     output = output.replace("b'","")
     output = output.replace("\n'","")
     await event.edit("Downloaded "+output+" files.")
-             
-             
-             
-             
-             
-             
-@borg.on(admin_cmd(pattern=r"geta"))
+                                                                          
+@telebot.on(admin_cmd(outgoing=True, pattern="geta"))
 async def get_media(event):
     if event.fwd_from:
         return

@@ -677,7 +677,7 @@ async def _(event):
             await event.edit(animation_chars[i % 30])        
 
 # By @xditya. Kangers keep credits xD		
-@register(outgoing=True, pattern="^.lul$")
+@telebot.on(admin_cmd(outgoing=True, pattern=="lul"))
 
 async def join(e):
 
@@ -685,7 +685,7 @@ async def join(e):
 
         await e.edit("╱┏┓╱╱╱╭━━━╮┏┓╱╱╱╱ \n╱┃┃╱╱╱┃╭━╮┃┃┃╱╱╱╱ \n╱┃┗━━┓┃╰━╯┃┃┗━━┓╱ \n╱┗━━━┛╰━━━╯┗━━━┛╱")
 # By @xditya. Kangers keep credits xD	
-@register(outgoing=True, pattern="^.yes$")
+@telebot.on(admin_cmd(outgoing=True, pattern="yes"))
 
 async def join(e):
 
@@ -693,20 +693,20 @@ async def join(e):
 
         await e.edit("┈┈┈┈┈┈▕▔╲ \n┈┈┈┈┈┈┈▏▕ \n┈┈┈┈┈┈┈▏▕▂▂▂ \n▂▂▂▂▂▂╱┈▕▂▂▂▏ \n▉▉▉▉▉┈┈┈▕▂▂▂▏ \n▉▉▉▉▉┈┈┈▕▂▂▂▏ \n▔▔▔▔▔▔╲▂▕▂▂▂I")
 # By @xditya. Kangers keep credits xD
-@register(outgoing=True, pattern="^.gn$")
+@telebot.on(admin_cmd(outgoing=True, pattern="gn"))
 
 async def join(e):
 
     await e.edit("｡♥｡･ﾟ♡ﾟ･｡♥｡･｡･｡･｡♥｡･\n╱╱╱╱╱╱╱╭╮╱╱╱╭╮╱╭╮╭╮\n╭━┳━┳━┳╯┃╭━┳╋╋━┫╰┫╰╮\n┃╋┃╋┃╋┃╋┃┃┃┃┃┃╋┃┃┃╭┫\n┣╮┣━┻━┻━╯╰┻━┻╋╮┣┻┻━╯\n╰━╯╱╱╱╱╱╱╱╱╱╱╰━╯\n｡♥｡･ﾟ♡ﾟ･｡♥° ♥｡･ﾟ♡ﾟ･")
     
 # By @xditya. Kangers keep credits xD
-@register(outgoing=True, pattern="^.gm$")
+@telebot.on(admin_cmd(outgoing=True, pattern="gm")
 
 async def join(e):
 
     await e.edit("｡♥｡･ﾟ♡ﾟ･｡♥｡･｡･｡･｡♥｡･｡♥｡･ﾟ♡ﾟ･\n╱╱╱╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╭╮\n╭━┳━┳━┳╯┃╭━━┳━┳┳┳━┳╋╋━┳┳━╮\n┃╋┃╋┃╋┃╋┃┃┃┃┃╋┃╭┫┃┃┃┃┃┃┃╋┃\n┣╮┣━┻━┻━╯╰┻┻┻━┻╯╰┻━┻┻┻━╋╮┃\n╰━╯╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━╯\n｡♥｡･ﾟ♡ﾟ･｡♥｡･｡･｡･｡♥｡･｡♥｡･ﾟ♡ﾟ･")
 
-@register(outgoing=True, pattern="^.like$")
+@telebot.on(admin_cmd(outgoing=True, pattern="like")
 
 async def join(e):
 

@@ -7,6 +7,7 @@ from telethon import events, functions, version, __version__
 import random
 from userbot.utils import register
 from userbot import ALIVE_NAME
+from userbot.utils import admin_cmd
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "No name set yet, check pinned in @TeleBotHelp"
 
@@ -15,7 +16,7 @@ ONLINESTR = [
 	f"╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗\n║║║╠─║─║─║║║║║╠─\n╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝\n              **Welcome to TeleBot**\n\n**Hey master! I'm alive. All systems online and functioning normally ✅**\n\n**✔️ Telethon version:** `{version.__version__}` \n\n**✔️ Python:** `{sys.version}` \n\n✔️ More info: @TeleBotHelpChat \n\n✔️ Created by: [Aditya 🇮🇳](tg://user?id=719195224) \n\n**✔️ Database status:** All ok 👌 \n\n**✔️ My master:** {DEFAULTUSER} \n\n        [🌟 Github repository 🌟](https://github.com/xditya/TeleBot)"
 ]
 
-@register(outgoing=True, pattern="^.online$")
+@telebot.on(admin_cmd(outgoing=True, pattern="online")
 async def online(event):
     """ Greet everyone! """
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):

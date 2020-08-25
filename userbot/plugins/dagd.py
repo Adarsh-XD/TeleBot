@@ -8,7 +8,7 @@ import requests
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("dns (.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="dns (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -21,7 +21,7 @@ async def _(event):
         await event.edit("i can't seem to find {} on the internet".format(input_str))
 
 
-@borg.on(admin_cmd("url (.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="url (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -34,7 +34,7 @@ async def _(event):
         await event.edit("something is wrong. please try again later.")
 
 
-@borg.on(admin_cmd("unshort (.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="unshort (.*)"))
 async def _(event):
     if event.fwd_from:
         return

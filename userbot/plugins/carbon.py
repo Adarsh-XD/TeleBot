@@ -32,7 +32,7 @@ CARBONLANG = "auto"
 LANG = "en"
 
 
-@borg.on(admin_cmd(pattern="carbon"))
+@telebot.on(admin_cmd(outgoing=True, pattern="carbon"))
 async def carbon_api(e):
  if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
  

@@ -9,6 +9,7 @@ Hmmmm U need to config DOWNLOAD_PFP_URL_CLOCK var in Heroku with any telegraph i
 2) Ported By: @r4v4n4 (Noodz Lober)
 3) End Game Help By: @spechide
 4) Better Colour Profile Pic By @PhycoNinja13b
+5) Ported to TeleBot by @its_xditya
 
 #curse: who ever edits this credit section will goto hell
 
@@ -31,7 +32,7 @@ FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 
 DEFAULTUSER = str(ALIVE_NAME)
 
-@borg.on(admin_cmd(pattern="bloom ?(.*)"))
+@telebot.on(admin_cmd(outgoing=True, pattern="bloom ?(.*)"))
 async def autopic(event): 
     await event.edit("Bloom colour profile pic have been enabled") 
     downloaded_file_name = "./ravana/original_pic.png"

@@ -1,6 +1,7 @@
 from userbot.utils import register
+from userbot.utils import admin_cmd
 
-@register(outgoing=True, pattern="^.group$")
+@telebot.on(admin_cmd(outgoing=True, pattern="group"))
 
 async def join(e):
 

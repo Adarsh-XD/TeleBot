@@ -1,8 +1,9 @@
 # Plugin by @xditya for @TeleBotHelp
 # Kangers keep credits 😐
 from userbot.utils import register
+from userbot.utils import admin_cmd
 
-@register(outgoing=True, pattern="^.night$")
+@telebot.on(admin_cmd(outgoing=True, pattern="night")
 
 async def join(e):
 

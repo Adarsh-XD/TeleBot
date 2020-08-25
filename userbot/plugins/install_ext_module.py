@@ -12,7 +12,7 @@ import traceback
 import os
 import userbot.utils
 
-@command(pattern="^.extdl", outgoing=True)
+@telebot.on(admin_cmd(outgoing=True, pattern="extdl"))
 async def install(event):
     if event.fwd_from:
         return

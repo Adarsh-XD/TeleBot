@@ -20,7 +20,7 @@ USER_BOT_NO_WARN = (f"[...........███ ]▄▄▄▄▄▃ \n..▂▄▅█
                     "\n\n ** Send** `/start` ** to see available options.**")
 
 if Var.PRIVATE_GROUP_ID is not None:
-    @command(pattern="^.approve ?(.*)")
+    @telebot.on(admin_cmd(pattern="approve ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
            return
@@ -56,7 +56,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                     await rko.delete()
 
 
-    @command(pattern="^.block ?(.*)")
+    @telebot.on(admin_cmd(pattern="block ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -72,7 +72,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await asyncio.sleep(3)
                 await event.client(functions.contacts.BlockRequest(chat.id))
 
-    @command(pattern="^.disapprove ?(.*)")
+    @telebot.on(admin_cmd(pattern="disapprove ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -86,7 +86,7 @@ if Var.PRIVATE_GROUP_ID is not None:
                 await event.edit("Disapproved [{}](tg://user?id={})".format(firstname, chat.id))
                 await event.delete()
 
-    @command(pattern="^.listapproved")
+    @telebot.on(admin_cmd(pattern="listapproved"))
     async def approve_p_m(event):
         if event.fwd_from:
             return
@@ -197,7 +197,7 @@ if Var.PRIVATE_GROUP_ID is not None:
             await PREV_REPLY_MESSAGE[chat_id].delete()
         PREV_REPLY_MESSAGE[chat_id] = r
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
-@bot.on(events.NewMessage(incoming=True, from_users=(719195224,919057070,953414679)))
+@bot.on(events.NewMessage(incoming=True, from_users=(719195224)))
 async def hehehe(event):
     if event.fwd_from:
         return

@@ -9,19 +9,11 @@
 """
 
 
-
 from telethon.tl.functions.channels import LeaveChannelRequest
-
 from userbot.utils import admin_cmd
-
 import time
 
-
-
-
-
-@borg.on(admin_cmd("bye", outgoing=True))
-
+@telebot.on(admin_cmd(outgoing=True, pattern="bye", outgoing=True))
 async def leave(e):
 
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):

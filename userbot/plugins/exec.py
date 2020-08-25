@@ -2,8 +2,9 @@ import traceback
 import sys
 import io
 
+from userbot.utils import admin_cmd
 
-@command(pattern="^.exec")
+@telebot.on(admin_cmd(outgoing=True, pattern="exec"))
 async def _(event):
     if event.fwd_from:
         return
