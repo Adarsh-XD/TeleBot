@@ -56,7 +56,7 @@ if bool(ENV):
         )
         quit(1)
     # Command Handler
-    CMD_HNDLR = os.environ.get("CMD_HNDLR", None)
+    CMD_HNDLR = os.environ.get("CMD_HNDLR", ".")
 
     # Logging channel/group configuration.
     BOTLOG_CHATID = os.environ.get("BOTLOG_CHATID", None)
