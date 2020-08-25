@@ -20,7 +20,7 @@ from userbot import LOAD_PLUG
 from userbot.uniborgConfig import Config
 from var import Var
 
-telehnd = Config.COMMAND_HAND_LER if Config.COMMAND_HAND_LER else "."
+telehnd = Config.CMD_HNDLR if Config.CMD_HNDLR else "."
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
