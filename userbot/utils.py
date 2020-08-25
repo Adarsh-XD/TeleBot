@@ -20,6 +20,7 @@ from userbot import LOAD_PLUG
 from userbot.uniborgConfig import Config
 from var import Var
 
+telehnd = Var.COMMAND_HAND_LER
 
 def command(**args):
     args["func"] = lambda e: e.via_bot_id is None
@@ -163,8 +164,8 @@ def admin_cmd(pattern=None, **args):
             # special fix for snip.py
             args["pattern"] = re.compile(pattern)
         else:
-            args["pattern"] = re.compile(Config.CMD_HNDLR + pattern)
-            cmd = Config.CMD_HNDLR + pattern
+            args["pattern"] = re.compile(telehnd + pattern)
+            cmd = telehnd + pattern
             try:
                 CMD_LIST[file_test].append(cmd)
             except:
