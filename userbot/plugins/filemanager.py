@@ -18,7 +18,7 @@ from userbot.utils import admin_cmd
 MAX_MESSAGE_SIZE_LIMIT = 4095
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="ls ?(.*)"))
+@register(outgoing=True, pattern=r"^\.ls ?(.*)")
 async def lst(event):
     if event.fwd_from:
         return
