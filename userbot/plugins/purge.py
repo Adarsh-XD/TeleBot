@@ -11,9 +11,9 @@ from telethon.errors import rpcbaseerrors
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.utils import register, errors_handler
+from userbot.utils import admin_cmd
 
-
-@register(outgoing=True, pattern="^.purge$")
+@telebot.on(admin_cmd(pattern="purge"))
 @errors_handler
 async def fastpurger(purg):
     """ For .purge command, purge all messages starting from the reply. """
@@ -45,7 +45,7 @@ async def fastpurger(purg):
     await done.delete()
 
 
-@register(outgoing=True, pattern="^.purgeme")
+@telebot.on(admin_cmd(pattern="purgeme"))
 @errors_handler
 async def purgeme(delme):
     """ For .purgeme, delete x count of your latest message."""
@@ -73,7 +73,7 @@ async def purgeme(delme):
     await smsg.delete()
 
 
-@register(outgoing=True, pattern="^.del$")
+@telebot.on(admin_cmd(pattern="del"))
 @errors_handler
 async def delete_it(delme):
     """ For .del command, delete the replied message. """
@@ -91,7 +91,7 @@ async def delete_it(delme):
                     BOTLOG_CHATID, "Well, I can't delete a message")
 
 
-@register(outgoing=True, pattern="^.edit")
+@telebot.on(admin_cmd(pattern="edit"))
 @errors_handler
 async def editer(edit):
     """ For .editme command, edit your last message. """
@@ -111,7 +111,7 @@ async def editer(edit):
                                        "Edit query was executed successfully")
 
 
-@register(outgoing=True, pattern="^.sd")
+@telebot.on(admin_cmd(pattern="sd"))
 @errors_handler
 async def selfdestruct(destroy):
     """ For .sd command, make seflf-destructable messages. """

@@ -35,7 +35,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 #@command(pattern="^.ping$")
-@borg.on(admin_cmd(pattern="ping$"))
+@borg.on(admin_cmd(pattern="ping"))
 async def _(event):
     if event.fwd_from:
         return
