@@ -11,7 +11,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from uniborg.util import admin_cmd
 
-@borg.on(admin_cmd("neko"))
+@borg.on(admin_cmd(pattern="neko"))
 async def _(event):
     if event.fwd_from:
         return
@@ -31,7 +31,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("feet"))
+@borg.on(admin_cmd(pattern="feet"))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,7 +51,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("yuri"))
+@borg.on(admin_cmd(pattern="yuri"))
 async def _(event):
     if event.fwd_from:
         return
@@ -71,7 +71,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("trap"))
+@borg.on(admin_cmd(pattern="trap"))
 async def _(event):
     if event.fwd_from:
         return
@@ -91,7 +91,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("futanari"))
+@borg.on(admin_cmd(pattern="futanari"))
 async def _(event):
     if event.fwd_from:
         return
@@ -111,7 +111,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("hololewd"))
+@borg.on(admin_cmd(pattern="hololewd"))
 async def _(event):
     if event.fwd_from:
         return
@@ -131,7 +131,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("lewdkemo"))
+@borg.on(admin_cmd(pattern="lewdkemo"))
 async def _(event):
     if event.fwd_from:
         return
@@ -151,7 +151,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("erokemo"))
+@borg.on(admin_cmd(pattern="erokemo"))
 async def _(event):
     if event.fwd_from:
         return
@@ -171,7 +171,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("awallpaper"))
+@borg.on(admin_cmd(pattern="awallpaper"))
 async def _(event):
     if event.fwd_from:
         return
@@ -192,7 +192,7 @@ async def _(event):
                 await borg.send_file(event.chat_id, response.message.media)
 
 #By @WhySooSerious
-@borg.on(admin_cmd("lewdk"))
+@borg.on(admin_cmd(pattern="lewdk"))
 async def _(event):
     if event.fwd_from:
         return
@@ -212,7 +212,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("lewdpic"))
+@borg.on(admin_cmd(pattern="lewdpic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -232,7 +232,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("eroyuri"))
+@borg.on(admin_cmd(pattern="eroyuri"))
 async def _(event):
     if event.fwd_from:
         return
@@ -252,7 +252,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("eron"))
+@borg.on(admin_cmd(pattern="eron"))
 async def _(event):
     if event.fwd_from:
         return
@@ -272,7 +272,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("cumpic"))
+@borg.on(admin_cmd(pattern="cumpic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -292,7 +292,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("bjpic"))
+@borg.on(admin_cmd(pattern="bjpic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -313,7 +313,7 @@ async def _(event):
                 await borg.send_file(event.chat_id, response.message.media)
 
 #By @WhySooSerious
-@borg.on(admin_cmd("kemonomimi"))
+@borg.on(admin_cmd(pattern="kemonomimi"))
 async def _(event):
     if event.fwd_from:
         return
@@ -333,7 +333,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("hentaipic"))
+@borg.on(admin_cmd(pattern="hentaipic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -353,7 +353,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("erofeet"))
+@borg.on(admin_cmd(pattern="erofeet"))
 async def _(event):
     if event.fwd_from:
         return
@@ -373,7 +373,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("holopic"))
+@borg.on(admin_cmd(pattern="holopic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -393,7 +393,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("titspic"))
+@borg.on(admin_cmd(pattern="titspic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -413,7 +413,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("holoero"))
+@borg.on(admin_cmd(pattern="holoero"))
 async def _(event):
     if event.fwd_from:
         return
@@ -433,7 +433,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("pussypic"))
+@borg.on(admin_cmd(pattern="pussypic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -452,7 +452,7 @@ async def _(event):
             else:
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("femdom"))
+@borg.on(admin_cmd(pattern="femdom"))
 async def _(event):
     if event.fwd_from:
         return
@@ -471,7 +471,7 @@ async def _(event):
             else:
                 await borg.send_file(event.chat_id, response.message.media)
 #@WhySooSerious
-@borg.on(admin_cmd("erok"))
+@borg.on(admin_cmd(pattern="erok"))
 async def _(event):
     if event.fwd_from:
         return
@@ -491,7 +491,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("foxgirl"))
+@borg.on(admin_cmd(pattern="foxgirl"))
 async def _(event):
     if event.fwd_from:
         return
@@ -511,7 +511,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("eropic"))
+@borg.on(admin_cmd(pattern="eropic"))
 async def _(event):
     if event.fwd_from:
         return
@@ -531,7 +531,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("dva"))
+@borg.on(admin_cmd(pattern="dva"))
 async def _(event):
     if event.fwd_from:
         return
@@ -551,7 +551,7 @@ async def _(event):
                 await event.edit("👇🏻**Done**👇🏻")
                 await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("nsolo"))
+@borg.on(admin_cmd(pattern="nsolo"))
 async def _(event):
     if event.fwd_from:
         return
