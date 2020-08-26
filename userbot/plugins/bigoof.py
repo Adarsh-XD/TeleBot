@@ -9,7 +9,7 @@ import asyncio
 
 from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(outgoing=True, pattern="bigoof"))
+@telebot.on(admin_cmd(pattern="bigoof"))
 async def _(event):
     if event.fwd_from:
         return
