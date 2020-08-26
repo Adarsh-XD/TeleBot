@@ -30,7 +30,7 @@ def deEmojify(inputString: str) -> str:
     return re.sub(EMOJI_PATTERN, '', inputString)
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="waifu(?: |$)(.*)")
+@telebot.on(admin_cmd(outgoing=True, pattern="waifu(?: |$)(.*)"))
 
 async def waifu(animu):
 #"""Creates random anime sticker!"""
