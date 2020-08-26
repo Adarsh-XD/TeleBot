@@ -30,7 +30,7 @@ from telethon.tl.functions.messages import ImportChatInviteRequest
 
 from userbot.utils import admin_cmd
 
-@borg.on(admin_cmd("phd ?(.*)"))
+@borg.on(admin_cmd(pattern="phd ?(.*)"))
 
 async def _(event):
 
@@ -110,7 +110,7 @@ async def _(event):
 
                   video_hehe = await conv.get_response()
 
-                  await borg.send_file(event.chat_id, video_hehe, caption="`🤤 Video Uploaded by` [@anubisxx](https://github.com/Dark-Princ3/X-tra-Telegram)!🤤\n**Title:** `{}`".format(title))
+                  await borg.send_file(event.chat_id, video_hehe, caption="`🤤 Video Uploaded`!🤤\n**Title:** `{}`".format(title))
 
               elif "Unfortunately" in response.text:
 
