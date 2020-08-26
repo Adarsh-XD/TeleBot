@@ -13,7 +13,7 @@ from uniborg.util import admin_cmd
 
 
 
-@borg.on(admin_cmd("alewd"))
+@borg.on(admin_cmd(pattern="alewd"))
 async def _(event):
     if event.fwd_from:
         return
@@ -33,7 +33,7 @@ async def _(event):
             await event.delete()
             await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("gasm"))
+@borg.on(admin_cmd(pattern="gasm"))
 async def _(event):
     if event.fwd_from:
         return
@@ -53,7 +53,7 @@ async def _(event):
             await event.delete()
             await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("avatar"))
+@borg.on(admin_cmd(pattern="avatar"))
 async def _(event):
     if event.fwd_from:
         return
@@ -73,7 +73,7 @@ async def _(event):
             await event.delete()
             await borg.send_file(event.chat_id, response.message.media)
 #By @WhySooSerious
-@borg.on(admin_cmd("waifu"))
+@borg.on(admin_cmd(pattern="waifu"))
 async def _(event):
     if event.fwd_from:
         return
