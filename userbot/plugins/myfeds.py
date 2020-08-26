@@ -17,7 +17,7 @@ naam = str(ALIVE_NAME)
 
 bot = "@MissRose_bot"
 
-@borg.on(admin_cmd("myfeds ?(.*)"))
+@borg.on(admin_cmd(pattern="myfeds ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
