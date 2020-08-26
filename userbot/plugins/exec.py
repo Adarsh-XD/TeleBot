@@ -4,7 +4,7 @@ import io
 
 from userbot.utils import admin_cmd
 
-@telebot.on(admin_cmd(outgoing=True, pattern="exec"))
+@telebot.on(admin_cmd(pattern="exec"))
 async def _(event):
     if event.fwd_from:
         return
