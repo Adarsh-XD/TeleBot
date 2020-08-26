@@ -15,7 +15,6 @@ from youtube_dl.utils import (DownloadError, ContentTooShortError,
                               ExtractorError, GeoRestrictedError,
                               MaxDownloadsReached, PostProcessingError,
                               UnavailableVideoError, XAttrMetadataError)
-from asyncio import sleep
 from telethon.tl.types import DocumentAttributeAudio
 from uniborg.util import admin_cmd
 
@@ -49,10 +48,8 @@ async def progress(current, total, event, start, type_of_ps, file_name=None):
 def humanbytes(size):
     """Input size in bytes,
     outputs in a human readable format"""
-    # https://stackoverflow.com/a/49361727/4723940
     if not size:
         return ""
-    # 2 ** 10 = 1024
     power = 2**10
     raised_to_pow = 0
     dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
@@ -211,4 +208,3 @@ async def download_video(v_url):
                          f"{ytdl_data['title']}.mp4")))
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
-        
