@@ -22,7 +22,7 @@ afk_start = {}
 AFK_MSG = str(CUSTOM_AFK) if CUSTOM_AFK else "**Sorry**!! I'm AFK now."
 AFKSTR = f"{AFK_MSG}"
 
-@telebot.on(admin_cmd(outgoing=True, pattern=afk ?(.*)"))  # pylint:disable=E0602
+@telebot.on(admin_cmd(pattern=afk ?(.*)"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
