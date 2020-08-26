@@ -34,7 +34,7 @@ parent_id = Var.GDRIVE_FOLDER_ID
 G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
 
 
-@telebot.on(admin_cmd(outgoing=True, pattern="ugdrive ?(.*)"))
+@telebot.on(admin_cmd(pattern="ugdrive ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
